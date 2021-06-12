@@ -3,48 +3,51 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class FiniteState
+namespace Pintos.FiniteStateMachine
 {
-    protected FiniteController controller;
-    protected FiniteStateMachine stateMachine;
-
-    protected float startTime;
-
-    protected string animBoolName;
-
-    public FiniteState(string animBoolName, FiniteController controller, FiniteStateMachine stateMachine)
+    public abstract class FiniteState
     {
-        this.controller = controller;
-        this.stateMachine = stateMachine;
-        this.animBoolName = animBoolName;
+        protected FiniteController controller;
+        protected FiniteStateMachine stateMachine;
+
+        protected float startTime;
+
+        protected string animBoolName;
+
+        public FiniteState(string animBoolName, FiniteController controller, FiniteStateMachine stateMachine)
+        {
+            this.controller = controller;
+            this.stateMachine = stateMachine;
+            this.animBoolName = animBoolName;
+        }
+
+        public virtual void Enter()
+        {
+            DoChecks();
+            controller.Anim.SetBool(animBoolName, true);
+            startTime = Time.time;
+        }
+
+        public virtual void Exit()
+        {
+            controller.Anim.SetBool(animBoolName, false);
+        }
+
+        public virtual void LogicUpdate()
+        {
+
+        }
+
+        public virtual void PhysicsUpdate()
+        {
+            DoChecks();
+        }
+
+        public virtual void DoChecks()
+        {
+
+        }
+        
+
     }
-
-    public virtual void Enter()
-    {
-        DoChecks();
-        controller.Anim.SetBool(animBoolName, true);
-        startTime = Time.time;
-    }
-
-    public virtual void Exit()
-    {
-        controller.Anim.SetBool(animBoolName, false);
-    }
-
-    public virtual void LogicUpdate()
-    {
-
-    }
-
-    public virtual void PhysicsUpdate()
-    {
-        DoChecks();
-    }
-
-    public virtual void DoChecks()
-    {
-
-    }
-    
-
 }

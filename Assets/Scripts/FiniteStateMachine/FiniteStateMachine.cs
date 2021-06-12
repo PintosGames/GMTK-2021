@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FiniteStateMachine
+namespace Pintos.FiniteStateMachine
 {
-    public FiniteState CurrentState { get; private set; }
-
-    public void Initialize(FiniteState startingState)
+    public class FiniteStateMachine
     {
-        CurrentState = startingState;
-        CurrentState.Enter();
-    }
+        public FiniteState CurrentState { get; private set; }
 
-    public void ChangeState(FiniteState newState)
-    {
-        CurrentState.Exit();
-        CurrentState = newState;
-        CurrentState.Enter();
+        public void Initialize(FiniteState startingState)
+        {
+            CurrentState = startingState;
+            CurrentState.Enter();
+        }
+
+        public void ChangeState(FiniteState newState)
+        {
+            CurrentState.Exit();
+            CurrentState = newState;
+            CurrentState.Enter();
+        }
     }
 }
