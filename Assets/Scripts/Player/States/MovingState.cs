@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Pintos.FiniteStateMachine;
 using UnityEngine;
 
+using Pintos.FiniteStateMachine;
+
 namespace Pintos.Player
 {
     public class MovingState : PlayerState
     {
-        public MovingState(FiniteController controller, FiniteStateMachine.FiniteStateMachine stateMachine, ScriptableObject data, string animBoolName) : base(controller, stateMachine, data, animBoolName)
+        public MovingState(string animBoolName, FiniteController controller, StateMachine stateMachine) : base(animBoolName, controller, stateMachine)
         {
         }
 

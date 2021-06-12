@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pintos.FiniteStateMachine
 {
-    public class FiniteStateMachine
+    public class StateMachine
     {
         public FiniteState CurrentState { get; private set; }
 

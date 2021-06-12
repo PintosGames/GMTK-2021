@@ -9,14 +9,14 @@ namespace Pintos.FiniteStateMachine
     public abstract class FiniteState
     {
         protected FiniteController controller;
-        protected FiniteStateMachine stateMachine;
+        protected StateMachine stateMachine;
         protected ScriptableObject data;
 
         protected float startTime;
 
         protected string animBoolName;
 
-        public FiniteState(FiniteController controller, FiniteStateMachine stateMachine, ScriptableObject data, string animBoolName)
+        public FiniteState(string animBoolName, FiniteController controller, StateMachine stateMachine)
         {
             this.controller = controller;
             this.stateMachine = stateMachine;

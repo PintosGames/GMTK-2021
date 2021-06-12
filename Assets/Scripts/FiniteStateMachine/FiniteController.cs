@@ -5,24 +5,23 @@ using UnityEngine.Rendering;
 using UnityEditor;
 
 namespace Pintos.FiniteStateMachine
-    {
+{
     [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
     public abstract class FiniteController : MonoBehaviour
     {
-        public FiniteStateMachine StateMachine { get; private set; }
+        public StateMachine StateMachine { get; private set; }
 
         public FiniteState startState;
 
         public Animator Anim { get; private set; }
         public Rigidbody2D RB { get; private set; }
-        public ScriptableObject data { get; private set; }
 
         public Vector2 CurrentVelocity { get; private set; }
-        public Vector2 workspace;
+        private Vector2 workspace;
 
         private void Awake()
         {
-            StateMachine = new FiniteStateMachine();
+            StateMachine = new StateMachine();
 
             Initialize();
         }
