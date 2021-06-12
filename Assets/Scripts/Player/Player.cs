@@ -1,29 +1,58 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Pintos.FiniteStateMachine;
-using Pintos.Player.States;
-
-namespace Pintos.Player
+public class Player : MonoBehaviour
 {
-    public class Player : FiniteController
+    Vector2 dir = Vector2.right;
+    public int startCount;
+    public GameObject bodypartPrefab;
+    public List<Bodypart> body;
+
+    // Use this for initialization
+    void Start () 
     {
-        public PlayerData Data;
+        InvokeRepeating("Move", 0.3f, 0.3f);
 
-        public List<Transform> body;
-        public MovingState MovingState { get; private set; }
-
-        public override void Initialize()
+        for (int i = 0; i < startCount; i++)
         {
-            MovingState = new MovingState("moving", this, StateMachine, Data);
-
-            startState = MovingState;
+            var obj = Instantiate(bodypartPrefab, 
+                    new Vector3(transform.position.x - i, transform.position.y, transform.position.z), 
+                    Quaternion.identity, this.transform);
+            
+            body.Add(obj.GetComponent<Bodypart>());
         }
+    }
+   
+    // Update is called once per frame
+    void Update () 
+    {
+        // Move in a new Direction?
+        if (Input.GetKey(KeyCode.RightArrow))
+            dir = Vector2.right;
+        else if (Input.GetKey(KeyCode.DownArrow))
+            dir = -Vector2.up;    // '-up' means 'down'
+        else if (Input.GetKey(KeyCode.LeftArrow))
+            dir = -Vector2.right; // '-right' means 'left'
+        else if (Input.GetKey(KeyCode.UpArrow))
+            dir = Vector2.up;
+        else dir = Vector2.zero;
+    }
+   
+    void Move() 
+    {
+        var v = body.First().transform.position;
 
-        public override void LogicUpdate()
+        body.First().transform.Translate(dir);
+
+        if (dir != Vector2.zero)
         {
+            body.Last().transform.position = v;
+            body.Last().blue = !body.Last().blue;
 
+            body.Insert(1, body.Last());
+            body.RemoveAt(body.Count - 1);
         }
     }
 }
