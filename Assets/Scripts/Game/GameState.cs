@@ -4,17 +4,15 @@ using UnityEngine;
 
 using Pintos.FiniteStateMachine;
 
-namespace Pintos.Player.States
+namespace Pintos.Game
 {
-    public class MovingState : PlayerState
+    public class GameState : FiniteState
     {
-        public MovingState(string animBoolName, FiniteController controller, StateMachine stateMachine, PlayerData data) : base(animBoolName, controller, stateMachine, data)
-        {
-        }
+        protected GameData data;
 
-        public override void DoChecks()
+        public GameState(string animBoolName, FiniteController controller, StateMachine stateMachine, GameData data) : base(animBoolName, controller, stateMachine)
         {
-            base.DoChecks();
+            this.data = data;
         }
 
         public override void Enter()
@@ -26,7 +24,6 @@ namespace Pintos.Player.States
         {
             base.Exit();
         }
-
         public override void LogicUpdate()
         {
             base.LogicUpdate();

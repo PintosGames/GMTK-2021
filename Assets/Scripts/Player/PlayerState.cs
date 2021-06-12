@@ -8,8 +8,11 @@ namespace Pintos.Player
 {
     public abstract class PlayerState : FiniteState
     {
-        protected PlayerState(string animBoolName, FiniteController controller, StateMachine stateMachine) : base(animBoolName, controller, stateMachine)
+        protected PlayerData data;
+
+        protected PlayerState(string animBoolName, FiniteController controller, StateMachine stateMachine, PlayerData data) : base(animBoolName, controller, stateMachine)
         {
+            this.data = data;
         }
 
         public override void DoChecks()

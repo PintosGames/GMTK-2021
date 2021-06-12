@@ -10,7 +10,6 @@ namespace Pintos.FiniteStateMachine
     {
         protected FiniteController controller;
         protected StateMachine stateMachine;
-        protected ScriptableObject data;
 
         protected float startTime;
 
@@ -20,7 +19,6 @@ namespace Pintos.FiniteStateMachine
         {
             this.controller = controller;
             this.stateMachine = stateMachine;
-            this.data = data;
             this.animBoolName = animBoolName;
         }
 

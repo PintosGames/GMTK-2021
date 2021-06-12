@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pintos.FiniteStateMachine;
 using UnityEngine;
 
-using Pintos.FiniteStateMachine;
+using Pintos.Game.Objects;
 
-namespace Pintos.Player.States
+namespace Pintos.Game.States
 {
-    public class MovingState : PlayerState
+    public class FoodOnlyState : GameState
     {
-        public MovingState(string animBoolName, FiniteController controller, StateMachine stateMachine, PlayerData data) : base(animBoolName, controller, stateMachine, data)
+        public FoodOnlyState(string animBoolName, FiniteController controller, StateMachine stateMachine, GameData data) : base(animBoolName, controller, stateMachine, data)
         {
         }
 
@@ -20,6 +21,10 @@ namespace Pintos.Player.States
         public override void Enter()
         {
             base.Enter();
+
+            Food.FoodPickedUp += FoodPickedUp;
+
+            data.Spawn(data.foodPrefab);
         }
 
         public override void Exit()
@@ -35,6 +40,12 @@ namespace Pintos.Player.States
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+        }
+
+        void FoodPickedUp()
+        {
+            Debug.Log("other stuf");
+            data.Spawn(data.foodPrefab);
         }
     }
 }
