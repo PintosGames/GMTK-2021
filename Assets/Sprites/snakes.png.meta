@@ -4,25 +4,25 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -195859822891073121
-    second: snakes_0
+    second: red_head_left
   - first:
       213: -2334395075258715898
-    second: snakes_1
+    second: red_horizontal
   - first:
       213: 1026813267307767067
-    second: snakes_2
+    second: blue_horizontal
   - first:
       213: 1160356383516547490
-    second: snakes_3
+    second: blue_head_left
   - first:
       213: 7747049788588525143
-    second: snakes_4
+    second: red_head_up
   - first:
       213: 446172239769338440
-    second: snakes_5
+    second: green_gem
   - first:
       213: -3955502918409091728
-    second: snakes_6
+    second: red_gem
   - first:
       213: 1558324986919956477
     second: snakes_7
@@ -34,25 +34,25 @@ TextureImporter:
     second: snakes_9
   - first:
       213: -68727451841949892
-    second: snakes_10
+    second: red_down_up
   - first:
       213: 2286513817539541491
-    second: snakes_11
+    second: red_down_right
   - first:
       213: -1899102748776088088
-    second: snakes_12
+    second: blue_down_right
   - first:
       213: -8346281275004993872
-    second: snakes_13
+    second: blue_down_left
   - first:
       213: -4662242716885943124
-    second: snakes_14
+    second: red_vertical
   - first:
       213: -7095748759754202785
-    second: snakes_15
+    second: yellow_gem
   - first:
       213: -5382312233953170854
-    second: snakes_16
+    second: pink_gem
   - first:
       213: 3211597138505190357
     second: snakes_17
@@ -62,6 +62,72 @@ TextureImporter:
   - first:
       213: 5953147281746718301
     second: snakes_19
+  - first:
+      213: 8084476769070364570
+    second: red_up_right
+  - first:
+      213: 7678046566698127639
+    second: red_up_left
+  - first:
+      213: -604728677159952307
+    second: blue_up_right
+  - first:
+      213: 8864758251904071175
+    second: blue_up_left
+  - first:
+      213: 4322381255993286829
+    second: blue_vertical
+  - first:
+      213: -8831621302792701191
+    second: snakes_25
+  - first:
+      213: 4218416341626847073
+    second: snakes_26
+  - first:
+      213: 4841887902355839695
+    second: snakes_27
+  - first:
+      213: -1427278091172638204
+    second: blue_head_up
+  - first:
+      213: -958630716204285553
+    second: blue_head_down
+  - first:
+      213: 7606827406508256572
+    second: snakes_30
+  - first:
+      213: 1038911591446246458
+    second: snakes_31
+  - first:
+      213: 2260007651018925799
+    second: snakes_32
+  - first:
+      213: -9173939181410439044
+    second: red_head_down
+  - first:
+      213: -4776142230882694710
+    second: blue_head_lef
+  - first:
+      213: -3098322964207277521
+    second: red_head_lef
+  - first:
+      213: -5765860910472943604
+    second: snakes_36
+  - first:
+      213: 1362186510589344633
+    second: snakes_37
+  - first:
+      213: -5681696491844010902
+    second: snakes_38
+  - first:
+      213: 2172650140569639991
+    second: snakes_39
+  - first:
+      213: 4553462596495323847
+    second: snakes_40
+  - first:
+      213: -2625010179472485225
+    second: snakes_41
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -163,15 +229,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: snakes_0
+      name: red_head_left
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,15 +250,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_1
+      name: red_horizontal
       rect:
         serializedVersion: 2
         x: 4
-        y: 16
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,15 +271,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_2
+      name: blue_horizontal
       rect:
         serializedVersion: 2
         x: 8
-        y: 16
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,15 +292,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_3
+      name: blue_head_left
       rect:
         serializedVersion: 2
         x: 12
-        y: 16
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,15 +313,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_4
+      name: red_head_up
       rect:
         serializedVersion: 2
-        x: 0
-        y: 12
+        x: 16
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,15 +334,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_5
+      name: green_gem
       rect:
         serializedVersion: 2
-        x: 4
-        y: 12
+        x: 20
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,15 +355,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_6
+      name: red_gem
       rect:
         serializedVersion: 2
-        x: 8
-        y: 12
+        x: 24
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,12 +379,12 @@ TextureImporter:
       name: snakes_7
       rect:
         serializedVersion: 2
-        x: 12
-        y: 12
+        x: 28
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -334,12 +400,12 @@ TextureImporter:
       name: snakes_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 12
+        x: 32
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -355,12 +421,12 @@ TextureImporter:
       name: snakes_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
+        x: 36
+        y: 20
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -373,15 +439,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_10
+      name: red_down_up
       rect:
         serializedVersion: 2
-        x: 4
-        y: 8
+        x: 0
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,15 +460,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_11
+      name: red_down_right
       rect:
         serializedVersion: 2
-        x: 8
-        y: 8
+        x: 4
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,15 +481,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_12
+      name: blue_down_right
       rect:
         serializedVersion: 2
-        x: 12
-        y: 8
+        x: 8
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -436,15 +502,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_13
+      name: blue_down_left
       rect:
         serializedVersion: 2
-        x: 16
-        y: 8
+        x: 12
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -457,15 +523,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_14
+      name: red_vertical
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
+        x: 16
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -478,15 +544,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_15
+      name: yellow_gem
       rect:
         serializedVersion: 2
-        x: 8
-        y: 4
+        x: 20
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -499,15 +565,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_16
+      name: pink_gem
       rect:
         serializedVersion: 2
-        x: 12
-        y: 4
+        x: 24
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -523,12 +589,12 @@ TextureImporter:
       name: snakes_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 4
+        x: 28
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -544,12 +610,12 @@ TextureImporter:
       name: snakes_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -565,12 +631,12 @@ TextureImporter:
       name: snakes_19
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 36
+        y: 16
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -578,6 +644,468 @@ TextureImporter:
       bones: []
       spriteID: d5e681069e3dd9250800000000000000
       internalID: 5953147281746718301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_up_right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97365fb9c4d13070800000000000000
+      internalID: 8084476769070364570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_up_left
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71113f02ca6ed8a60800000000000000
+      internalID: 7678046566698127639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_up_right
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40a36cd8729b97f0800000000000000
+      internalID: -604728677159952307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_up_left
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7067470a9a2f50b70800000000000000
+      internalID: 8864758251904071175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_vertical
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da06943f9de2cfb30800000000000000
+      internalID: 4322381255993286829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_25
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fab4409737cf6580800000000000000
+      internalID: -8831621302792701191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ffe550053da8a30800000000000000
+      internalID: 4218416341626847073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_27
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca5e2ec467d13340800000000000000
+      internalID: 4841887902355839695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_head_up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40215fb532a413ce0800000000000000
+      internalID: -1427278091172638204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_head_down
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f818dd1517242b2f0800000000000000
+      internalID: -958630716204285553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_30
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d61a83931e09960800000000000000
+      internalID: 7606827406508256572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3470398694fa6e00800000000000000
+      internalID: 1038911591446246458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_32
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6e5ac0cf82d5f10800000000000000
+      internalID: 2260007651018925799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_head_down
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c703efc8bee9fa080800000000000000
+      internalID: -9173939181410439044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_head_lef
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9ce7332fbb7bdb0800000000000000
+      internalID: -4776142230882694710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_head_lef
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a6dfefdab8005d0800000000000000
+      internalID: -3098322964207277521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_36
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0823fefc0c8bffa0800000000000000
+      internalID: -5765860910472943604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bb1890a6577e210800000000000000
+      internalID: 1362186510589344633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_38
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cfd02c42f8621b0800000000000000
+      internalID: -5681696491844010902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_39
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c1bd9aacdc62e10800000000000000
+      internalID: 2172650140569639991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2b1223b16213f30800000000000000
+      internalID: 4553462596495323847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snakes_41
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79412c05627129bd0800000000000000
+      internalID: -2625010179472485225
       vertices: []
       indices: 
       edges: []
