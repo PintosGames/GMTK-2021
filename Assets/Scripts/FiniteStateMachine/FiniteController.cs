@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEditor;
 
 namespace Pintos.FiniteStateMachine
     {
@@ -14,6 +15,7 @@ namespace Pintos.FiniteStateMachine
 
         public Animator Anim { get; private set; }
         public Rigidbody2D RB { get; private set; }
+        public ScriptableObject data { get; private set; }
 
         public Vector2 CurrentVelocity { get; private set; }
         public Vector2 workspace;

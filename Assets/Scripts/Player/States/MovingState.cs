@@ -7,7 +7,7 @@ namespace Pintos.Player
 {
     public class MovingState : PlayerState
     {
-        public MovingState(string animBoolName, FiniteController controller, FiniteStateMachine.FiniteStateMachine stateMachine) : base(animBoolName, controller, stateMachine)
+        public MovingState(FiniteController controller, FiniteStateMachine.FiniteStateMachine stateMachine, ScriptableObject data, string animBoolName) : base(controller, stateMachine, data, animBoolName)
         {
         }
 
@@ -25,7 +25,7 @@ namespace Pintos.Player
         {
             base.Exit();
         }
-        
+
         public override void LogicUpdate()
         {
             base.LogicUpdate();

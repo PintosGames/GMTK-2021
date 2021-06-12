@@ -8,7 +8,7 @@ namespace Pintos.Player
 {
     public abstract class PlayerState : FiniteState
     {
-        protected PlayerState(string animBoolName, FiniteController controller, FiniteStateMachine.FiniteStateMachine stateMachine) : base(animBoolName, controller, stateMachine)
+        protected PlayerState(FiniteController controller, FiniteStateMachine.FiniteStateMachine stateMachine, ScriptableObject data, string animBoolName) : base(controller, stateMachine, data, animBoolName)
         {
         }
 

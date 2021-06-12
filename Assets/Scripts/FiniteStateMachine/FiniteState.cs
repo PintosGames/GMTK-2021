@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEditor;
 
 namespace Pintos.FiniteStateMachine
 {
@@ -9,15 +10,17 @@ namespace Pintos.FiniteStateMachine
     {
         protected FiniteController controller;
         protected FiniteStateMachine stateMachine;
+        protected ScriptableObject data;
 
         protected float startTime;
 
         protected string animBoolName;
 
-        public FiniteState(string animBoolName, FiniteController controller, FiniteStateMachine stateMachine)
+        public FiniteState(FiniteController controller, FiniteStateMachine stateMachine, ScriptableObject data, string animBoolName)
         {
             this.controller = controller;
             this.stateMachine = stateMachine;
+            this.data = data;
             this.animBoolName = animBoolName;
         }
 
