@@ -365,8 +365,8 @@ MonoBehaviour:
   m_RefResolutionY: 180
   m_UpscaleRT: 0
   m_PixelSnapping: 1
-  m_CropFrameX: 0
-  m_CropFrameY: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 1
   m_StretchFill: 0
 --- !u!1 &1078764076
 GameObject:
@@ -29511,7 +29511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.799, y: 0}
+  m_AnchoredPosition: {x: -4.798996, y: 0}
   m_SizeDelta: {x: -9.598, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1875230713
@@ -29644,7 +29644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4559563113029911710, guid: d4bbcc3b3a447e140b26311d4ef636d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4559563113029911710, guid: d4bbcc3b3a447e140b26311d4ef636d6, type: 3}
       propertyPath: m_LocalPosition.y

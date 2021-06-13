@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Player : MonoBehaviour
@@ -17,9 +18,13 @@ public class Player : MonoBehaviour
     public List<Bodypart> body;
     public bool ate;
 
+    private ScoreCounter counter;
+
     // Use this for initialization
     void Start () 
     {
+        counter = FindObjectOfType<ScoreCounter>();
+
         if (startCount % 2 != 0)
             startCount++;
         
@@ -52,6 +57,7 @@ public class Player : MonoBehaviour
         {
             body.Reverse();
             lastSwitch = Time.realtimeSinceStartup;
+            isControllingBlue = !isControllingBlue;
         }
     }
    
@@ -63,9 +69,6 @@ public class Player : MonoBehaviour
 
         if (dir != Vector2.zero)
         {
-            body.Last().transform.position = v;
-            body.Last().blue = !body.Last().blue;
-
             // Ate something? Then insert new Element into gap
             if (ate) 
             {
@@ -82,17 +85,23 @@ public class Player : MonoBehaviour
                 // Reset the flag
                 ate = false;
                 
-                Move();
                 ChangeBodySprites();
             }
             else
             {
+                body.Last().transform.position = v;
+                body.Last().blue = !body.Last().blue;
                 body.Insert(1, body.Last());
                 body.RemoveAt(body.Count - 1);
             }
         }
         
         ChangeBodySprites();
+
+        counter.CountBodyParts();
+        
+        if (counter.blueParts == 0 || counter.redParts == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void ChangeBodySprites()
