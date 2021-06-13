@@ -46,6 +46,11 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    private void Start()
+    {
+        Play("Theme1");
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
