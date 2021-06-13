@@ -13,7 +13,7 @@ TextureImporter:
     second: blue_horizontal
   - first:
       213: 1160356383516547490
-    second: blue_head_left
+    second: blue_head_right
   - first:
       213: 7747049788588525143
     second: red_head_up
@@ -34,10 +34,10 @@ TextureImporter:
     second: snakes_9
   - first:
       213: -68727451841949892
-    second: red_down_up
+    second: red_down_right
   - first:
       213: 2286513817539541491
-    second: red_down_right
+    second: red_down_left
   - first:
       213: -1899102748776088088
     second: blue_down_right
@@ -106,10 +106,10 @@ TextureImporter:
     second: red_head_down
   - first:
       213: -4776142230882694710
-    second: blue_head_lef
+    second: blue_head_left
   - first:
       213: -3098322964207277521
-    second: red_head_lef
+    second: red_head_right
   - first:
       213: -5765860910472943604
     second: snakes_36
@@ -292,7 +292,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue_head_left
+      name: blue_head_right
       rect:
         serializedVersion: 2
         x: 12
@@ -439,7 +439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red_down_up
+      name: red_down_right
       rect:
         serializedVersion: 2
         x: 0
@@ -460,7 +460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red_down_right
+      name: red_down_left
       rect:
         serializedVersion: 2
         x: 4
@@ -943,7 +943,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue_head_lef
+      name: blue_head_left
       rect:
         serializedVersion: 2
         x: 8
@@ -964,7 +964,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red_head_lef
+      name: red_head_right
       rect:
         serializedVersion: 2
         x: 12

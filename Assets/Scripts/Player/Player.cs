@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
 
     Sprite GetSprite(int bodypartInt)
     {
+        string spriteName = null;
         Vector3 overDir = Vector3.zero;
         Vector3 underDir = Vector3.zero;
 
@@ -76,31 +78,59 @@ public class Player : MonoBehaviour
         {
             overDir = body[bodypartInt + 1].transform.position - body[bodypartInt].transform.position;
         }
-        catch
+        catch(ArgumentOutOfRangeException)
         {
-            return body[bodypartInt].gameObject.GetComponent<SpriteRenderer>().sprite;
+            underDir = body[bodypartInt - 1].transform.position - body[bodypartInt].transform.position;
+
+            if (underDir == Vector3.down)
+                spriteName = "HeadUp";
+            else if  (underDir == Vector3.up)
+                spriteName = "HeadDown";
+            else if  (underDir == Vector3.right)
+                spriteName = "HeadLeft";
+            else if  (underDir == Vector3.left)
+                spriteName = "HeadRight";
+            
+            if (body[bodypartInt].blue)
+                return blueSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            else
+                return redSprites.First(bodypart => bodypart.name == spriteName).sprite;
         }
 
         try
         {
             underDir = body[bodypartInt - 1].transform.position - body[bodypartInt].transform.position;
         }
-        catch
+        catch(ArgumentOutOfRangeException)
         {
-            return body[bodypartInt].gameObject.GetComponent<SpriteRenderer>().sprite;
+            if (overDir == Vector3.down)
+                spriteName = "HeadUp";
+            else if  (overDir == Vector3.up)
+                spriteName = "HeadDown";
+            else if  (overDir == Vector3.right)
+                spriteName = "HeadLeft";
+            else if  (overDir == Vector3.left)
+                spriteName = "HeadRight";
+            
+            if (body[bodypartInt].blue)
+                return blueSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            else
+                return redSprites.First(bodypart => bodypart.name == spriteName).sprite;
         }
 
-        Debug.Log("Overdir is right = " + (overDir == Vector3.right));
-        Debug.Log("UnderDir is right = " + (underDir == Vector3.right));
 
-        string spriteName = null;
-
-        if ((overDir == Vector3.right && underDir == Vector3.left) || (overDir == Vector3.left && underDir == Vector3.right))
+        if ((overDir == Vector3.right || overDir == Vector3.left) && (underDir == Vector3.left || underDir == Vector3.right))
             spriteName = "Horizontal";
-        if ((overDir == Vector3.up && underDir == Vector3.down) || (overDir == Vector3.down && underDir == Vector3.up))
+        else if ((overDir == Vector3.up && underDir == Vector3.down) || (overDir == Vector3.down && underDir == Vector3.up))
             spriteName = "Vertical";
-        else
-            spriteName = "HUH";
+        else if ((overDir == Vector3.down || overDir == Vector3.right) && (underDir == Vector3.right || underDir == Vector3.down))
+            spriteName = "DownRight";
+        else if ((overDir == Vector3.down || overDir == Vector3.left) && (underDir == Vector3.left || underDir == Vector3.down))
+            spriteName = "DownLeft";
+        else if ((overDir == Vector3.up || overDir == Vector3.right) && (underDir == Vector3.right || underDir == Vector3.up))
+            spriteName = "UpRight";
+        else if ((overDir == Vector3.up || overDir == Vector3.left) && (underDir == Vector3.left || underDir == Vector3.up))
+            spriteName = "UpLeft";
 
         if (body[bodypartInt].blue)
             return blueSprites.First(bodypart => bodypart.name == spriteName).sprite;
