@@ -25,13 +25,13 @@ TextureImporter:
     second: red_gem
   - first:
       213: 1558324986919956477
-    second: snakes_7
+    second: wall_top_left
   - first:
       213: 6612720727435909927
-    second: snakes_8
+    second: wall_top
   - first:
       213: 3836692926995889845
-    second: snakes_9
+    second: wall_top_right
   - first:
       213: -68727451841949892
     second: red_down_right
@@ -55,13 +55,13 @@ TextureImporter:
     second: pink_gem
   - first:
       213: 3211597138505190357
-    second: snakes_17
+    second: wall_left
   - first:
       213: 4139353521841652836
-    second: snakes_18
+    second: ground
   - first:
       213: 5953147281746718301
-    second: snakes_19
+    second: wall_right
   - first:
       213: 8084476769070364570
     second: red_up_right
@@ -79,13 +79,13 @@ TextureImporter:
     second: blue_vertical
   - first:
       213: -8831621302792701191
-    second: snakes_25
+    second: wall_down_left
   - first:
       213: 4218416341626847073
-    second: snakes_26
+    second: wall_down
   - first:
       213: 4841887902355839695
-    second: snakes_27
+    second: wall_down_right
   - first:
       213: -1427278091172638204
     second: blue_head_up
@@ -376,7 +376,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_7
+      name: wall_top_left
       rect:
         serializedVersion: 2
         x: 28
@@ -397,7 +397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_8
+      name: wall_top
       rect:
         serializedVersion: 2
         x: 32
@@ -418,7 +418,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_9
+      name: wall_top_right
       rect:
         serializedVersion: 2
         x: 36
@@ -586,7 +586,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_17
+      name: wall_left
       rect:
         serializedVersion: 2
         x: 28
@@ -607,7 +607,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_18
+      name: ground
       rect:
         serializedVersion: 2
         x: 32
@@ -628,7 +628,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_19
+      name: wall_right
       rect:
         serializedVersion: 2
         x: 36
@@ -754,7 +754,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_25
+      name: wall_down_left
       rect:
         serializedVersion: 2
         x: 28
@@ -775,7 +775,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_26
+      name: wall_down
       rect:
         serializedVersion: 2
         x: 32
@@ -796,7 +796,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: snakes_27
+      name: wall_down_right
       rect:
         serializedVersion: 2
         x: 36

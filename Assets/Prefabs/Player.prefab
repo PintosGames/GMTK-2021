@@ -83,8 +83,8 @@ MonoBehaviour:
   - name: UpLeft
     sprite: {fileID: 7678046566698127639, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
   - name: DownRight
-    sprite: {fileID: 8084476769070364570, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
+    sprite: {fileID: -68727451841949892, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
   - name: DownLeft
-    sprite: {fileID: 7678046566698127639, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
+    sprite: {fileID: 2286513817539541491, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
   bodypartPrefab: {fileID: 1507190406030971861, guid: 4a0af0940c3a77d449ff4b8ae0dfce9e, type: 3}
   body: []
