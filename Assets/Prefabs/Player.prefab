@@ -43,7 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282684179d104c946a7705fe9baecd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCount: 3
+  lastSwitch: 0
+  switchCooldown: 10
+  isControllingBlue: 1
+  startCount: 15
   blueSprites:
   - name: Horizontal
     sprite: {fileID: 1026813267307767067, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
@@ -88,3 +91,4 @@ MonoBehaviour:
     sprite: {fileID: 2286513817539541491, guid: 904945bfff3e0b24f985b8a7cc35c69f, type: 3}
   bodypartPrefab: {fileID: 1507190406030971861, guid: 4a0af0940c3a77d449ff4b8ae0dfce9e, type: 3}
   body: []
+  ate: 0

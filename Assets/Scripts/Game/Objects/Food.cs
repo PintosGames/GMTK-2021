@@ -11,8 +11,9 @@ namespace Pintos.Game.Objects
 
         private void OnTriggerEnter2D(Collider2D other) 
         {
-            Debug.Log("Collision");
+            Destroy(gameObject.GetComponent<Collider2D>());
             FoodPickedUp();
+            FindObjectOfType<Player>().ate = true;
             Destroy(this.gameObject);
         }
     }

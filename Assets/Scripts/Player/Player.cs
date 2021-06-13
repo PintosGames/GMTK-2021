@@ -2,20 +2,30 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Player : MonoBehaviour
 {
+    public float lastSwitch;
+    public float switchCooldown;
+    public bool isControllingBlue = true;
     Vector2 dir = Vector2.right;
     public int startCount;
     public List<BodySprite> blueSprites;
     public List<BodySprite> redSprites;
     public GameObject bodypartPrefab;
     public List<Bodypart> body;
+    public bool ate;
+    private bool retract;
+
+    private ScoreCounter counter;
 
     // Use this for initialization
     void Start () 
     {
+        counter = FindObjectOfType<ScoreCounter>();
+
         if (startCount % 2 != 0)
             startCount++;
         
@@ -34,6 +44,8 @@ public class Player : MonoBehaviour
 
             body.Add(obj.GetComponent<Bodypart>());
         }
+
+        lastSwitch = Time.realtimeSinceStartup;
     }
    
     // Update is called once per frame
@@ -41,23 +53,82 @@ public class Player : MonoBehaviour
     {
         CheckInput();
 
-        ChangeBodySprites();
+        if (Time.realtimeSinceStartup > lastSwitch + switchCooldown)
+        {
+            body.Reverse();
+            lastSwitch = Time.realtimeSinceStartup;
+            isControllingBlue = !isControllingBlue;
+            FindObjectOfType<SwitchText>().GetComponent<Animator>().Play("switch", -1, 0f);
+        }
     }
    
     void Move() 
     {
-        var v = body.First().transform.position;
-
-        body.First().transform.Translate(dir);
-
-        if (dir != Vector2.zero)
+        if (retract)
         {
-            body.Last().transform.position = v;
-            body.Last().blue = !body.Last().blue;
+            var v = body.First().transform.position;
 
-            body.Insert(1, body.Last());
-            body.RemoveAt(body.Count - 1);
+            body.First().transform.Translate(dir);
+
+            if (dir != Vector2.zero)
+            {
+                // Ate something? Then insert new Element into gap
+                if (ate) 
+                {
+                    // Load Prefab into the world
+                    GameObject g = (GameObject)Instantiate(bodypartPrefab,
+                                                        v,
+                                                        Quaternion.identity,
+                                                        this.transform);
+
+                    g.GetComponent<Bodypart>().blue = isControllingBlue;
+                    // Keep track of it in our tail list
+                    body.Insert(1, g.GetComponent<Bodypart>());
+
+                    // Reset the flag
+                    ate = false;
+                    
+                    ChangeBodySprites();
+                }
+                else
+                {
+                    body.Last().transform.position = v;
+                    body.Last().blue = !body.Last().blue;
+                    body.Insert(1, body.Last());
+                    body.RemoveAt(body.Count - 1);
+                }
+            }
         }
+        else
+        {
+            if (dir != Vector2.zero)
+            {
+                var v = body.First().transform.position;
+
+                for (int i = 0; i < body.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        var temp = body[i].transform.position;
+                        body[i].transform.Translate(v - body[i].transform.position);
+                        v = temp;
+                    }
+                    else
+                    {
+                        body[i].transform.Translate(dir);
+                    }
+                }
+            }
+        }
+        
+        ChangeBodySprites();
+
+        counter.CountBodyParts();
+        
+        retract = !retract;
+
+        if (counter.blueParts == 0 || counter.redParts == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void ChangeBodySprites()
@@ -133,9 +204,9 @@ public class Player : MonoBehaviour
             spriteName = "UpLeft";
 
         if (body[bodypartInt].blue)
-            return blueSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            return blueSprites.FirstOrDefault(bodypart => bodypart.name == spriteName).sprite;
         else
-            return redSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            return redSprites.FirstOrDefault(bodypart => bodypart.name == spriteName).sprite;
     }
 
     void CheckInput()
@@ -150,6 +221,9 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
         else dir = Vector2.zero;
+
+        if ((Vector3)dir == (body[1].transform.position - body[0].transform.position))
+            dir = Vector2.zero;
     }
 
     [System.Serializable]

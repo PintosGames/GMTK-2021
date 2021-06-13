@@ -35,6 +35,9 @@ namespace Pintos.Game.States
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+
+            if (!MonoBehaviour.FindObjectOfType<Food>())
+                data.Spawn(data.foodPrefab);
         }
 
         public override void PhysicsUpdate()
@@ -45,7 +48,6 @@ namespace Pintos.Game.States
         void FoodPickedUp()
         {
             Debug.Log("other stuf");
-            data.Spawn(data.foodPrefab);
         }
     }
 }
