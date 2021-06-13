@@ -5,12 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
-public delegate void Switch();
 public class Player : MonoBehaviour
 {
     public float lastSwitch;
     public float switchCooldown;
-    public static event Switch Switch;
     public bool isControllingBlue = true;
     Vector2 dir = Vector2.right;
     public int startCount;
@@ -55,7 +53,6 @@ public class Player : MonoBehaviour
     {
         CheckInput();
 
-        Debug.Log(Time.realtimeSinceStartup);
         if (Time.realtimeSinceStartup > lastSwitch + switchCooldown)
         {
             body.Reverse();
