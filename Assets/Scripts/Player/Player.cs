@@ -58,8 +58,8 @@ public class Player : MonoBehaviour
             body.Reverse();
             lastSwitch = Time.realtimeSinceStartup;
             isControllingBlue = !isControllingBlue;
-            FindObjectOfType<SwitchText>().GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
             FindObjectOfType<SwitchText>().GetComponent<Animator>().SetBool("anim", true);
+            FindObjectOfType<AudioManager>().Play("Switch");
         }
     }
    
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 
     public void GameOver()
     {
-        FindObjectOfType<SwitchText>().GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+        FindObjectOfType<AudioManager>().Play("Death");
         FindObjectOfType<GameOver>().GetComponent<Animator>().SetBool("anim", true);
     }
 

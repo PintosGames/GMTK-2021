@@ -8,13 +8,11 @@ public class GameUI : MonoBehaviour
 {
     public void Restart()
     {
-        string scene = SceneManager.GetActiveScene().name;
-
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene("Menu");
     }
     
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        Application.Quit();
     }
 }

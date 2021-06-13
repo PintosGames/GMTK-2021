@@ -12,13 +12,10 @@ public class Bodypart : MonoBehaviour
         if (other.GetComponent<Food>() != null)
         {
             FindObjectOfType<Player>().ate = true;
+            FindObjectOfType<AudioManager>().Play("Chomp");
+            Destroy(other.gameObject);
         }
         else
             FindObjectOfType<Player>().GameOver();
-    }
-
-    private void Start()
-    {
-        FindObjectOfType<AudioManager>().Play("Misc");
     }
 }
