@@ -22,8 +22,6 @@ namespace Pintos.Game.States
         {
             base.Enter();
 
-            Food.FoodPickedUp += FoodPickedUp;
-
             data.Spawn(data.foodPrefab);
         }
 
@@ -43,11 +41,6 @@ namespace Pintos.Game.States
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-        }
-
-        void FoodPickedUp()
-        {
-            Debug.Log("other stuf");
         }
     }
 }
