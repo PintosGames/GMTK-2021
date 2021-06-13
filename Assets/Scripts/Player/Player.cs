@@ -6,12 +6,16 @@ using System;
 
 public class Player : MonoBehaviour
 {
+    public float lastSwitch;
+    public float switchCooldown;
+    public bool isControllingBlue = true;
     Vector2 dir = Vector2.right;
     public int startCount;
     public List<BodySprite> blueSprites;
     public List<BodySprite> redSprites;
     public GameObject bodypartPrefab;
     public List<Bodypart> body;
+    public bool ate;
 
     // Use this for initialization
     void Start () 
@@ -34,6 +38,8 @@ public class Player : MonoBehaviour
 
             body.Add(obj.GetComponent<Bodypart>());
         }
+
+        lastSwitch = Time.realtimeSinceStartup;
     }
    
     // Update is called once per frame
@@ -41,7 +47,12 @@ public class Player : MonoBehaviour
     {
         CheckInput();
 
-        ChangeBodySprites();
+        Debug.Log(Time.realtimeSinceStartup);
+        if (Time.realtimeSinceStartup > lastSwitch + switchCooldown)
+        {
+            body.Reverse();
+            lastSwitch = Time.realtimeSinceStartup;
+        }
     }
    
     void Move() 
@@ -55,9 +66,33 @@ public class Player : MonoBehaviour
             body.Last().transform.position = v;
             body.Last().blue = !body.Last().blue;
 
-            body.Insert(1, body.Last());
-            body.RemoveAt(body.Count - 1);
+            // Ate something? Then insert new Element into gap
+            if (ate) 
+            {
+                // Load Prefab into the world
+                GameObject g = (GameObject)Instantiate(bodypartPrefab,
+                                                    v,
+                                                    Quaternion.identity,
+                                                    this.transform);
+
+                g.GetComponent<Bodypart>().blue = isControllingBlue;
+                // Keep track of it in our tail list
+                body.Insert(1, g.GetComponent<Bodypart>());
+
+                // Reset the flag
+                ate = false;
+                
+                Move();
+                ChangeBodySprites();
+            }
+            else
+            {
+                body.Insert(1, body.Last());
+                body.RemoveAt(body.Count - 1);
+            }
         }
+        
+        ChangeBodySprites();
     }
 
     void ChangeBodySprites()
@@ -133,9 +168,9 @@ public class Player : MonoBehaviour
             spriteName = "UpLeft";
 
         if (body[bodypartInt].blue)
-            return blueSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            return blueSprites.FirstOrDefault(bodypart => bodypart.name == spriteName).sprite;
         else
-            return redSprites.First(bodypart => bodypart.name == spriteName).sprite;
+            return redSprites.FirstOrDefault(bodypart => bodypart.name == spriteName).sprite;
     }
 
     void CheckInput()
@@ -150,6 +185,9 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(KeyCode.UpArrow))
             dir = Vector2.up;
         else dir = Vector2.zero;
+
+        if ((Vector3)dir == (body[1].transform.position - body[0].transform.position))
+            dir = Vector2.zero;
     }
 
     [System.Serializable]

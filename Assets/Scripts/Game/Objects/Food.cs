@@ -13,6 +13,7 @@ namespace Pintos.Game.Objects
         {
             Debug.Log("Collision");
             FoodPickedUp();
+            FindObjectOfType<Player>().ate = true;
             Destroy(this.gameObject);
         }
     }
