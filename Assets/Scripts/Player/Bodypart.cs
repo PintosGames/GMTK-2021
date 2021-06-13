@@ -16,4 +16,9 @@ public class Bodypart : MonoBehaviour
         else
             FindObjectOfType<Player>().GameOver();
     }
+
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Misc");
+    }
 }
