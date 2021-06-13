@@ -5,10 +5,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+public delegate void Switch();
 public class Player : MonoBehaviour
 {
     public float lastSwitch;
     public float switchCooldown;
+    public static event Switch Switch;
     public bool isControllingBlue = true;
     Vector2 dir = Vector2.right;
     public int startCount;
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     public GameObject bodypartPrefab;
     public List<Bodypart> body;
     public bool ate;
+    private bool retract;
 
     private ScoreCounter counter;
 
@@ -58,41 +61,66 @@ public class Player : MonoBehaviour
             body.Reverse();
             lastSwitch = Time.realtimeSinceStartup;
             isControllingBlue = !isControllingBlue;
+            FindObjectOfType<SwitchText>().GetComponent<Animator>().Play("switch", -1, 0f);
         }
     }
    
     void Move() 
     {
-        var v = body.First().transform.position;
-
-        body.First().transform.Translate(dir);
-
-        if (dir != Vector2.zero)
+        if (retract)
         {
-            // Ate something? Then insert new Element into gap
-            if (ate) 
+            var v = body.First().transform.position;
+
+            body.First().transform.Translate(dir);
+
+            if (dir != Vector2.zero)
             {
-                // Load Prefab into the world
-                GameObject g = (GameObject)Instantiate(bodypartPrefab,
-                                                    v,
-                                                    Quaternion.identity,
-                                                    this.transform);
+                // Ate something? Then insert new Element into gap
+                if (ate) 
+                {
+                    // Load Prefab into the world
+                    GameObject g = (GameObject)Instantiate(bodypartPrefab,
+                                                        v,
+                                                        Quaternion.identity,
+                                                        this.transform);
 
-                g.GetComponent<Bodypart>().blue = isControllingBlue;
-                // Keep track of it in our tail list
-                body.Insert(1, g.GetComponent<Bodypart>());
+                    g.GetComponent<Bodypart>().blue = isControllingBlue;
+                    // Keep track of it in our tail list
+                    body.Insert(1, g.GetComponent<Bodypart>());
 
-                // Reset the flag
-                ate = false;
-                
-                ChangeBodySprites();
+                    // Reset the flag
+                    ate = false;
+                    
+                    ChangeBodySprites();
+                }
+                else
+                {
+                    body.Last().transform.position = v;
+                    body.Last().blue = !body.Last().blue;
+                    body.Insert(1, body.Last());
+                    body.RemoveAt(body.Count - 1);
+                }
             }
-            else
+        }
+        else
+        {
+            if (dir != Vector2.zero)
             {
-                body.Last().transform.position = v;
-                body.Last().blue = !body.Last().blue;
-                body.Insert(1, body.Last());
-                body.RemoveAt(body.Count - 1);
+                var v = body.First().transform.position;
+
+                for (int i = 0; i < body.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        var temp = body[i].transform.position;
+                        body[i].transform.Translate(v - body[i].transform.position);
+                        v = temp;
+                    }
+                    else
+                    {
+                        body[i].transform.Translate(dir);
+                    }
+                }
             }
         }
         
@@ -100,6 +128,8 @@ public class Player : MonoBehaviour
 
         counter.CountBodyParts();
         
+        retract = !retract;
+
         if (counter.blueParts == 0 || counter.redParts == 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
