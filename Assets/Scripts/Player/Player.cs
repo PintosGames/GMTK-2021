@@ -58,7 +58,8 @@ public class Player : MonoBehaviour
             body.Reverse();
             lastSwitch = Time.realtimeSinceStartup;
             isControllingBlue = !isControllingBlue;
-            FindObjectOfType<SwitchText>().GetComponent<Animator>().Play("switch", -1, 0f);
+            FindObjectOfType<SwitchText>().GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+            FindObjectOfType<SwitchText>().GetComponent<Animator>().SetBool("anim", true);
         }
     }
    
@@ -128,7 +129,15 @@ public class Player : MonoBehaviour
         retract = !retract;
 
         if (counter.blueParts == 0 || counter.redParts == 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        {
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        FindObjectOfType<SwitchText>().GetComponentInChildren<SpriteRenderer>().sortingOrder = 5;
+        FindObjectOfType<GameOver>().GetComponent<Animator>().SetBool("anim", true);
     }
 
     void ChangeBodySprites()
