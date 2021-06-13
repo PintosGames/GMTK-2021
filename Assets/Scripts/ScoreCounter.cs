@@ -17,6 +17,8 @@ public class ScoreCounter : MonoBehaviour
 
     public void CountBodyParts()
     {
+        FindObjectOfType<AudioManager>().Play("Chomp");
+
         redParts = 0;
         blueParts = 0;
 
