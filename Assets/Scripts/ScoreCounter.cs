@@ -31,5 +31,9 @@ public class ScoreCounter : MonoBehaviour
                 redParts++;
             }
         }
+
+        scoreSlider.maxValue = player.body.Count;
+
+        scoreSlider.value = blueParts;
     }
 }
